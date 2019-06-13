@@ -1,0 +1,15 @@
+---
+spring:
+  profiles:
+    active: default
+  application:
+    name: Recipe Website
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://${db-host}:1433;databaseName=${db-name}
+    username: ${db-userName}
+    password: ${db-password}
+  flyway:
+    enabled: true
+
+
