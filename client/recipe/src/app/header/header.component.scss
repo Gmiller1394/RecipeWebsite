@@ -9,4 +9,21 @@
 
 button{
   padding-left: 20px;
+  background-color: transparent;
+  border-radius: 0;
+  color: #FFFFFF;
+  height: 75%;
+  border: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.profileIcon{
+  margin-right: 40px;
+  right: 0;
+  position: absolute;
+  &:hover {
+    cursor: pointer;
+  }
 }
