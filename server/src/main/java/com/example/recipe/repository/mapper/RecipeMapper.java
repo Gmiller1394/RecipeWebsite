@@ -15,12 +15,12 @@ public class RecipeMapper implements RowMapper<Recipe>, Serializable
 		Recipe recipe = new Recipe();
 		recipe.setId(resultSet.getInt("ID"));
 		recipe.setRecipeName(resultSet.getString("RECIPE_NAME"));
-		recipe.setIngedientListId(resultSet.getInt("DATE_ADDED"));
-		recipe.setDate(resultSet.getDate("FIRST_NAME"));
-		recipe.setFirstName(resultSet.getString("LAST_NAME"));
-		recipe.setLastName(resultSet.getString("DIRECTION_LIST_ID"));
-		recipe.setDirectionListId(resultSet.getInt("TIME_MINUTES"));
-		recipe.setCookTime(resultSet.getInt("CATEGORY_ID"));
+		recipe.setIngedientListId(resultSet.getInt("INGREDIENT_LIST_ID"));
+		recipe.setDate(resultSet.getDate("DATE_ADDED"));
+		recipe.setFirstName(resultSet.getString("FIRST_NAME"));
+		recipe.setLastName(resultSet.getString("LAST_NAME"));
+		recipe.setDirectionListId(resultSet.getInt("DIRECTION_LIST_ID"));
+		recipe.setCookTime(resultSet.getInt("TIME_MINUTES"));
 		return recipe;
 	}
 }

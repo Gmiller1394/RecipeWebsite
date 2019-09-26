@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {RecipeRestService} from "../../services/recipe-rest/recipe-rest.service";
+import {Recipe} from "../../models/Recipe";
 
 @Component({
   selector: 'recipe-page',
@@ -7,13 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipesComponent implements OnInit {
 
-  constructor() { }
+  public recipeList: Array<Recipe>;
+
+  constructor(private recipeRestService: RecipeRestService) { }
 
   ngOnInit() {
   }
 
   getRecipes(categoryId){
-    //call recipes from db
+    this.recipeRestService.getRecipes(categoryId).subscribe(response => {
+      this.recipeList = response;
+      console.log(this.recipeList);
+    });
   }
 
 }

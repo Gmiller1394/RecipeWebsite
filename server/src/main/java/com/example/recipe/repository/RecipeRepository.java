@@ -22,7 +22,9 @@ public class RecipeRepository
 		MapSqlParameterSource params = new MapSqlParameterSource();
 		params.addValue(CATEGORY_ID, categoryId);
 
-		String sql ="SELECT * FROM RECIPE WHERE CATEGORY_ID = " + CATEGORY_ID;
+		String sql ="SELECT ID, RECIPE_NAME, INGREDIENT_LIST_ID, DATE_ADDED,"
+				+ "FIRST_NAME, LAST_NAME, DIRECTION_LIST_ID, TIME_MINUTES"
+				+ " FROM RECIPE WHERE CATEGORY_ID = " + CATEGORY_ID;
 		return namedParameterJdbcTemplate.query(sql, params, new RecipeMapper());
 	}
 }
