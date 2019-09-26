@@ -17,6 +17,7 @@ export class RecipesComponent implements OnInit {
   }
 
   getRecipes(categoryId){
+    console.log("category id: " + categoryId);
     this.recipeRestService.getRecipes(categoryId).subscribe(response => {
       this.recipeList = response;
       console.log(this.recipeList);

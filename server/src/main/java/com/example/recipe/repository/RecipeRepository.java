@@ -16,7 +16,7 @@ public class RecipeRepository
 	@Autowired
 	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
-	private final String CATEGORY_ID = "CATEGORY_ID";
+	private static final String CATEGORY_ID = "categoryId";
 
 	public List<Recipe> getRecipe(int categoryId){
 		MapSqlParameterSource params = new MapSqlParameterSource();
@@ -24,7 +24,7 @@ public class RecipeRepository
 
 		String sql ="SELECT ID, RECIPE_NAME, INGREDIENT_LIST_ID, DATE_ADDED,"
 				+ "FIRST_NAME, LAST_NAME, DIRECTION_LIST_ID, TIME_MINUTES"
-				+ " FROM RECIPE WHERE CATEGORY_ID = " + CATEGORY_ID;
+				+ " FROM RECIPE WHERE CATEGORY_ID = :" + CATEGORY_ID;
 		return namedParameterJdbcTemplate.query(sql, params, new RecipeMapper());
 	}
 }
