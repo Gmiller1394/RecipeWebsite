@@ -38,7 +38,9 @@ import { RecipesComponent } from './components/recipes/recipes.component';
     MatFormFieldModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    RecipesComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

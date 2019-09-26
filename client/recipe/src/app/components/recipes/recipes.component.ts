@@ -13,7 +13,7 @@ export class RecipesComponent implements OnInit {
   }
 
   getRecipes(categoryId){
-
+    //call recipes from db
   }
 
 }

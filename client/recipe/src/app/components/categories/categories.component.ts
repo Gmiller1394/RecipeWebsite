@@ -11,10 +11,14 @@ import {RecipesComponent} from "../recipes/recipes.component";
 export class CategoriesComponent implements OnInit {
 
   public listOfCategories: Array<Category>;
+  public isCategories: Boolean;
 
-  constructor(private categoryRestService: CategoryRestService) { }
+  constructor(private categoryRestService: CategoryRestService,
+              private recipe: RecipesComponent) {
+  }
 
   ngOnInit() {
+    this.isCategories = true;
     this.getCategories();
   }
 
@@ -25,7 +29,8 @@ export class CategoriesComponent implements OnInit {
   }
 
   getRecipes(index){
-    console.log(this.listOfCategories[index].id);
+    this.isCategories = false;
+    this.recipe.getRecipes(this.listOfCategories[index].id);
   }
 
 }

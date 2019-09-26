@@ -78,7 +78,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[RECIPE](
 	[ID] [int] IDENTITY(1,1) NOT NULL,
-	[RECIPE_NAME] [varchar] NULL,
+	[RECIPE_NAME] [varchar](max) NULL,
 	[INGREDIENT_LIST_ID] [int] NULL,
 	[DATE_ADDED] [datetime] NULL,
 	[FIRST_NAME] [varchar](max) NULL,
