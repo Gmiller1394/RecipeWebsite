@@ -16,13 +16,15 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { FooterComponent } from './components/footer/footer.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import {HttpClientModule} from "@angular/common/http";
+import { RecipesComponent } from './components/recipes/recipes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    RecipesComponent
   ],
   imports: [
     BrowserModule,

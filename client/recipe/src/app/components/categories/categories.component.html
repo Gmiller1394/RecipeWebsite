@@ -1,3 +1,8 @@
 <div class="categories" *ngFor="let cat of listOfCategories; index as i">
   <button mat-button class="categoryBtn" (click)="getRecipes(i)">{{ cat.category }}</button>
 </div>
+
+<!--set this to show when button clicked I think ngSwitch-->
+<div>
+  <recipe-page></recipe-page>
+</div>

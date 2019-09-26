@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {Category} from "../../models/category";
-import {CategoryRestService} from "../../services/category/category-rest.service";
+import {CategoryRestService} from "../../services/category-service/category-rest.service";
+import {RecipesComponent} from "../recipes/recipes.component";
 
 @Component({
-  selector: 'app-categorys',
+  selector: 'app-categories',
   templateUrl: './categories.component.html',
   styleUrls: ['./categories.component.scss']
 })
@@ -24,7 +25,7 @@ export class CategoriesComponent implements OnInit {
   }
 
   getRecipes(index){
-    console.log(this.listOfCategories[index].category);
+    console.log(this.listOfCategories[index].id);
   }
 
 }
