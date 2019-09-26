@@ -1,5 +1,3 @@
-<ul>
-  <li *ngFor="let cat of listOfCategories">
-    <span class="badge">{{ cat.category }}</span>
-  </li>
-</ul>
+<div class="categories" *ngFor="let cat of listOfCategories; index as i">
+  <button mat-button class="categoryBtn" (click)="getRecipes(i)">{{ cat.category }}</button>
+</div>

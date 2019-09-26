@@ -20,8 +20,11 @@ export class CategoriesComponent implements OnInit {
   public getCategories(){
     this.categoryRestService.getCategoryNames().subscribe(response => {
       this.listOfCategories = response;
-      console.log(this.listOfCategories);
     });
+  }
+
+  getRecipes(index){
+    console.log(this.listOfCategories[index].category);
   }
 
 }
