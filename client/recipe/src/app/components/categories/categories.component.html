@@ -5,7 +5,5 @@
 </div>
 
 <div *ngIf="!isCategories">
-  <div>
-    <recipe-page></recipe-page>
-  </div>
+    <recipe-page [categoryId]="categoryId"></recipe-page>
 </div>

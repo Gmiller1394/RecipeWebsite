@@ -1,3 +1,9 @@
-<p>
-  recipes works!
-</p>
+<div>
+  <button mat-button>
+    <mat-icon>keyboard_arrow_left</mat-icon>
+    <span class="backText">Categories</span>
+  </button>
+</div>
+<div class="recipes" *ngFor="let r of recipeList">
+  <button mat-button class="recipeBtn">{{ r.recipeName }}</button>
+</div>
