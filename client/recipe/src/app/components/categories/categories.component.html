@@ -1,6 +1,6 @@
 <div *ngIf="isCategories">
   <div class="categories" *ngFor="let cat of listOfCategories">
-    <button mat-button class="categoryBtn" [routerLink]="['recipes/', cat.id]"
+    <button mat-button class="categoryBtn" [routerLink]="['recipes/',cat.category, cat.id]"
             routerLinkActive="active">{{ cat.category }}
     </button>
   </div>
