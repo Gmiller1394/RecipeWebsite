@@ -10,7 +10,7 @@ export class RecipeRestService {
   constructor(private http: HttpClient) { }
 
   getRecipes(categoryId){
-    return this.http.get<any>('/api/services/categories/' + categoryId).pipe(
+    return this.http.get<any>('/api/services/categories/recipes/' + categoryId).pipe(
       map(response => response)
     );
   }

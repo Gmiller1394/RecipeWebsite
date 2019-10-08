@@ -1,9 +1,11 @@
 <div *ngIf="isCategories">
-  <div class="categories" *ngFor="let cat of listOfCategories; index as i">
-    <button mat-button class="categoryBtn" (click)="getRecipes(i)">{{ cat.category }}</button>
+  <div class="categories" *ngFor="let cat of listOfCategories">
+    <button mat-button class="categoryBtn" [routerLink]="['recipes/', cat.id]"
+            routerLinkActive="active">{{ cat.category }}
+    </button>
   </div>
 </div>
 
 <div *ngIf="!isCategories">
-    <recipe-page [categoryId]="categoryId"></recipe-page>
+    <recipe-page></recipe-page>
 </div>

@@ -19,7 +19,7 @@ public class RecipeController
 	@Autowired
 	private RecipeService recipeService;
 
-	@GetMapping(value = "/categories/{categoryId}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/categories/recipes/{categoryId}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Recipe> getRecipes(@PathVariable int categoryId){
 		List<Recipe> recipeList = recipeService.getRecipeList(categoryId);
 		return recipeList;
