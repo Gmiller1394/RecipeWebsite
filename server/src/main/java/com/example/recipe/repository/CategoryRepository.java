@@ -16,7 +16,7 @@ public class CategoryRepository
 	private JdbcTemplate jdbcTemplate;
 
 	public List<Category> getCategories(){
-		String sql = "SELECT DISTINCT CATEGORY FROM "
+		String sql = "SELECT DISTINCT CATEGORY, ID FROM "
 				+ "CATEGORY ORDER BY CATEGORY ASC";
 		return jdbcTemplate.query(sql, new CategoryMapper());
 	}

@@ -14,6 +14,7 @@ public class CategoryMapper implements RowMapper<Category>, Serializable
 	public Category mapRow(ResultSet resultSet, int i) throws SQLException {
 		Category category = new Category();
 		category.setCategory(resultSet.getString("CATEGORY"));
+		category.setId(resultSet.getInt("ID"));
 		return category;
 	}
 }
