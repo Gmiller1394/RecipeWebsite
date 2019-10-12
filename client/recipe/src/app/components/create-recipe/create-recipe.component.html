@@ -15,5 +15,19 @@
     </mat-form-field>
   </div>
 
+  <div formArrayName="ingredientList">
+    <div *ngFor="let item of ingredients.controls; let pointIndex=index" [formGroupName]="pointIndex">
+      <label>
+        Ingredient Name: <input formControlName="name" />
+      </label>
+      <button type="button" (click)="deleteIngredient(pointIndex)">Delete Ingredient</button>
+    </div>
+    <button type="button" (click)="addIngredient()">Add Ingredient</button>
+  </div>
+
   <button mat-button class="button" type="submit">Add Recipe</button>
+
+  <div>
+    {{ this.recipeForm.value | json }}
+  </div>
 </form>
