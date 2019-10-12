@@ -1,4 +1,4 @@
-<form [formGroup]="recipeForm" (ngSubmit)="onSubmit(recipeForm.value)">
+<form [formGroup]="recipeForm">
   <div>
     <mat-form-field class="example-full-width">
       <input matInput placeholder="Recipe Name" id="recipeName" type="text" formControlName="recipeName">
@@ -16,9 +16,9 @@
   </div>
 
   <div formArrayName="ingredientList">
-    <div *ngFor="let item of ingredients.controls; let pointIndex=index" [formGroupName]="pointIndex">
+    <div *ngFor="let item of ingredients.controls; let ingredientIndex=index" [formGroupName]="ingredientIndex">
       <mat-form-field class="ingredientInputName">
-        <input matInput placeholder="Ingredient Name" type="text" formControlName="name" />
+        <input matInput placeholder="Ingredient Name" type="text" formControlName="name"/>
       </mat-form-field>
       <mat-form-field class="ingredientAmount">
         <input matInput placeholder="Amount" type="text" formControlName="measurement" />
@@ -26,12 +26,22 @@
       <mat-form-field class="ingredientUnit">
         <input matInput placeholder="Unit" type="text" formControlName="unit" />
       </mat-form-field>
-      <mat-icon class="deleteIcon" (click)="deleteIngredient(pointIndex)">delete</mat-icon>
+      <mat-icon class="deleteIcon" (click)="deleteIngredient(ingredientIndex)">delete</mat-icon>
     </div>
-    <button mat-button class="addIngredient" (click)="addIngredient()">+ Add Ingredient</button>
+    <button mat-button class="addBtn" (click)="addIngredient()">+ Add Ingredient</button>
   </div>
 
-  <button mat-button class="submitButton" type="submit">Add Recipe</button>
+  <div formArrayName="directionsList" class="directionGroup">
+    <div *ngFor="let d of directions.controls; let directionIndex = index" [formGroupName]="directionIndex">
+      <mat-form-field class="directionTxt">
+        <textarea matInput placeholder="Add a Direction" formControlName="direction"></textarea>
+      </mat-form-field>
+      <mat-icon class="deleteIcon" (click)="deleteDirection(directionIndex)">delete</mat-icon>
+    </div>
+    <button mat-button class="addBtn" (click)="addDirection()">+ Add Direction</button>
+  </div>
+
+  <button mat-button class="submitButton" type="submit" (click)="onSubmit(recipeForm.value)">Add Recipe</button>
 
   <div class="json">
     {{ this.recipeForm.value | json }}

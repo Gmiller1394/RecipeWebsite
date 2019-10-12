@@ -4,6 +4,7 @@
 
 .deleteIcon {
   color: #D41608;
+  padding-left: 20px;
   &:hover {
     cursor: pointer;
   }
@@ -23,7 +24,7 @@
   width: 100px;
 }
 
-.addIngredient {
+.addBtn {
   border: 1px solid #000000;
 }
 
@@ -31,6 +32,15 @@
   background-color: #4286F4;
   color: #FFFFFF;
   width: 300px;
+  margin-top: 20px;
+}
+
+.directionGroup{
+  padding-top: 20px;
+}
+
+.directionTxt {
+  width: 50%;
 }
 
 .json {

@@ -2,9 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {FormArray, FormBuilder, FormGroup} from "@angular/forms";
 import {CategoryRestService} from "../../services/category-service/category-rest.service";
 import {Category} from "../../models/category";
-import {Recipe} from "../../models/Recipe";
-import {Ingredient} from "../../models/ingredient";
-import {Direction} from "../../models/direction";
 
 @Component({
   selector: 'app-create-recipe',
@@ -30,7 +27,7 @@ export class CreateRecipeComponent implements OnInit {
       category: '',
       ingredientList: this.formBuilder.array([
         this.formBuilder.group({
-          name:'',
+          name: '',
           measurement: '',
           unit: ''
         })
@@ -38,7 +35,7 @@ export class CreateRecipeComponent implements OnInit {
       directionsList: this.formBuilder.array([
         this.formBuilder.group({
           direction: '',
-          step:''
+          step: 1,
         })
       ])
     });
@@ -48,16 +45,31 @@ export class CreateRecipeComponent implements OnInit {
     return this.recipeForm.get('ingredientList') as FormArray;
   }
 
+  get directions() {
+    return this.recipeForm.get('directionsList') as FormArray;
+  }
+
   addIngredient() {
     this.ingredients.push(this.formBuilder.group({
-      name:'',
+      name: '',
       measurement: '',
       unit: ''
     }));
   }
 
+  addDirection() {
+    this.directions.push(this.formBuilder.group({
+      direction: '',
+      step: this.directions.length + 1,
+    }));
+  }
+
   deleteIngredient(index) {
     this.ingredients.removeAt(index);
+  }
+
+  deleteDirection(index) {
+    this.directions.removeAt(index);
   }
 
   public getCategories(){
