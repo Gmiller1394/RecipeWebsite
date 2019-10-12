@@ -1,0 +1,68 @@
+.ingredient {
+  display: inline-block;
+}
+
+.deleteIcon {
+  color: #D41608;
+  padding-left: 20px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.ingredientInputName {
+  width: 30%;
+}
+
+.ingredientAmount {
+  margin-left: 20px;
+  width: 10%;
+}
+
+.ingredientUnit{
+  margin-left: 20px;
+  width: 10%;
+}
+
+.addBtn {
+  border: 1px solid #000000;
+}
+
+.submitButton {
+  background-color: #4286F4;
+  color: #FFFFFF;
+  width: 30%;
+  margin-top: 20px;
+}
+
+.directionGroup{
+  padding-top: 20px;
+}
+
+.directionTxt {
+  width: 52.75%;
+}
+
+.names {
+  margin-top: 20px;
+}
+
+.lastName {
+  margin-left: 20px;
+  width: 20%;
+}
+
+.firstName {
+  width: 20%;
+}
+
+.singleInput {
+  width: 50%;
+}
+
+form {
+    min-height: 400px;
+    margin-bottom: 100px;
+    clear: both;
+}
+

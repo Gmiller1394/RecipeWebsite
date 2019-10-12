@@ -1,3 +1,5 @@
+import {Ingredient} from "./ingredient";
+
 export class Recipe {
   id: Number;
   recipeName: String;
@@ -7,4 +9,5 @@ export class Recipe {
   lastName: String;
   directionListId: Number;
   cookTime: Number;
+  ingredientList: Ingredient[];
 }

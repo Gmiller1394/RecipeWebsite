@@ -9,7 +9,7 @@ import {
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
-  MatMenuModule, MatSortModule, MatTableModule,
+  MatMenuModule, MatSelectModule, MatSortModule, MatTableModule,
   MatToolbarModule
 } from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
@@ -17,6 +17,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import {HttpClientModule} from "@angular/common/http";
 import { RecipesComponent } from './components/recipes/recipes.component';
+import { CreateRecipeComponent } from './components/create-recipe/create-recipe.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { RecipesComponent } from './components/recipes/recipes.component';
     HeaderComponent,
     FooterComponent,
     CategoriesComponent,
-    RecipesComponent
+    RecipesComponent,
+    CreateRecipeComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,9 @@ import { RecipesComponent } from './components/recipes/recipes.component';
     MatInputModule,
     MatFormFieldModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   providers: [
     RecipesComponent
