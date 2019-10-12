@@ -4,6 +4,7 @@ import {CategoryRestService} from "../../services/category-service/category-rest
 import {Category} from "../../models/category";
 import {Recipe} from "../../models/Recipe";
 import {Ingredient} from "../../models/ingredient";
+import {Direction} from "../../models/direction";
 
 @Component({
   selector: 'app-create-recipe',
@@ -20,6 +21,10 @@ export class CreateRecipeComponent implements OnInit {
 
   ngOnInit() {
     this.getCategories();
+    this.createRecipeForm();
+  }
+
+  createRecipeForm(){
     this.recipeForm = this.formBuilder.group({
       recipeName: '',
       category: '',
@@ -28,6 +33,12 @@ export class CreateRecipeComponent implements OnInit {
           name:'',
           measurement: '',
           unit: ''
+        })
+      ]),
+      directionsList: this.formBuilder.array([
+        this.formBuilder.group({
+          direction: '',
+          step:''
         })
       ])
     });

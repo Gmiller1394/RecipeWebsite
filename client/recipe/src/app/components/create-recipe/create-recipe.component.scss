@@ -1,3 +1,38 @@
-.ingredient{
+.ingredient {
   display: inline-block;
+}
+
+.deleteIcon {
+  color: #D41608;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.ingredientInputName {
+  width: 300px;
+}
+
+.ingredientAmount {
+  margin-left: 20px;
+  width: 100px;
+}
+
+.ingredientUnit{
+  margin-left: 20px;
+  width: 100px;
+}
+
+.addIngredient {
+  border: 1px solid #000000;
+}
+
+.submitButton {
+  background-color: #4286F4;
+  color: #FFFFFF;
+  width: 300px;
+}
+
+.json {
+  padding-top: 50px;
 }

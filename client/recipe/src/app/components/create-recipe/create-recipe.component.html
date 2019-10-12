@@ -17,17 +17,23 @@
 
   <div formArrayName="ingredientList">
     <div *ngFor="let item of ingredients.controls; let pointIndex=index" [formGroupName]="pointIndex">
-      <label>
-        Ingredient Name: <input formControlName="name" />
-      </label>
-      <button type="button" (click)="deleteIngredient(pointIndex)">Delete Ingredient</button>
+      <mat-form-field class="ingredientInputName">
+        <input matInput placeholder="Ingredient Name" type="text" formControlName="name" />
+      </mat-form-field>
+      <mat-form-field class="ingredientAmount">
+        <input matInput placeholder="Amount" type="text" formControlName="measurement" />
+      </mat-form-field>
+      <mat-form-field class="ingredientUnit">
+        <input matInput placeholder="Unit" type="text" formControlName="unit" />
+      </mat-form-field>
+      <mat-icon class="deleteIcon" (click)="deleteIngredient(pointIndex)">delete</mat-icon>
     </div>
-    <button type="button" (click)="addIngredient()">Add Ingredient</button>
+    <button mat-button class="addIngredient" (click)="addIngredient()">+ Add Ingredient</button>
   </div>
 
-  <button mat-button class="button" type="submit">Add Recipe</button>
+  <button mat-button class="submitButton" type="submit">Add Recipe</button>
 
-  <div>
+  <div class="json">
     {{ this.recipeForm.value | json }}
   </div>
 </form>
