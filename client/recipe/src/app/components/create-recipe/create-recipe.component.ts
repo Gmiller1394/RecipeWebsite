@@ -37,7 +37,9 @@ export class CreateRecipeComponent implements OnInit {
           direction: '',
           step: 1,
         })
-      ])
+      ]),
+      firstName: '',
+      lastName: ''
     });
   }
 

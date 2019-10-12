@@ -1,12 +1,12 @@
 <form [formGroup]="recipeForm">
   <div>
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="example-full-width singleInput">
       <input matInput placeholder="Recipe Name" id="recipeName" type="text" formControlName="recipeName">
     </mat-form-field>
   </div>
 
   <div>
-    <mat-form-field>
+    <mat-form-field class="singleInput">
       <mat-select placeholder="Category" formControlName="category">
         <mat-option id="category"  value="{{cat.id}}" *ngFor="let cat of categoryList" >
           {{cat.category}}
@@ -41,9 +41,15 @@
     <button mat-button class="addBtn" (click)="addDirection()">+ Add Direction</button>
   </div>
 
+  <div class="names">
+    <mat-form-field class="example-full-width firstName">
+      <input matInput placeholder="First Name" type="text" formControlName="firstName">
+    </mat-form-field>
+    <mat-form-field class="example-full-width lastName">
+      <input matInput placeholder="Last Name" type="text" formControlName="firstName">
+    </mat-form-field>
+  </div>
+
   <button mat-button class="submitButton" type="submit" (click)="onSubmit(recipeForm.value)">Add Recipe</button>
 
-  <div class="json">
-    {{ this.recipeForm.value | json }}
-  </div>
 </form>

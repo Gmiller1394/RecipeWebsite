@@ -11,17 +11,17 @@
 }
 
 .ingredientInputName {
-  width: 300px;
+  width: 30%;
 }
 
 .ingredientAmount {
   margin-left: 20px;
-  width: 100px;
+  width: 10%;
 }
 
 .ingredientUnit{
   margin-left: 20px;
-  width: 100px;
+  width: 10%;
 }
 
 .addBtn {
@@ -31,7 +31,7 @@
 .submitButton {
   background-color: #4286F4;
   color: #FFFFFF;
-  width: 300px;
+  width: 30%;
   margin-top: 20px;
 }
 
@@ -40,9 +40,29 @@
 }
 
 .directionTxt {
+  width: 52.75%;
+}
+
+.names {
+  margin-top: 20px;
+}
+
+.lastName {
+  margin-left: 20px;
+  width: 20%;
+}
+
+.firstName {
+  width: 20%;
+}
+
+.singleInput {
   width: 50%;
 }
 
-.json {
-  padding-top: 50px;
+form {
+    min-height: 400px;
+    margin-bottom: 100px;
+    clear: both;
 }
+
