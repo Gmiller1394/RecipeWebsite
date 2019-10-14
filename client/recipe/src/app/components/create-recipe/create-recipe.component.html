@@ -1,0 +1,55 @@
+<form [formGroup]="recipeForm">
+  <div>
+    <mat-form-field class="example-full-width singleInput">
+      <input matInput placeholder="Recipe Name" id="recipeName" type="text" formControlName="recipeName">
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field class="singleInput">
+      <mat-select placeholder="Category" formControlName="category">
+        <mat-option id="category"  value="{{cat.id}}" *ngFor="let cat of categoryList" >
+          {{cat.category}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div formArrayName="ingredientList">
+    <div *ngFor="let item of ingredients.controls; let ingredientIndex=index" [formGroupName]="ingredientIndex">
+      <mat-form-field class="ingredientInputName">
+        <input matInput placeholder="Ingredient Name" type="text" formControlName="name"/>
+      </mat-form-field>
+      <mat-form-field class="ingredientAmount">
+        <input matInput placeholder="Amount" type="text" formControlName="measurement" />
+      </mat-form-field>
+      <mat-form-field class="ingredientUnit">
+        <input matInput placeholder="Unit" type="text" formControlName="unit" />
+      </mat-form-field>
+      <mat-icon class="deleteIcon" (click)="deleteIngredient(ingredientIndex)">delete</mat-icon>
+    </div>
+    <button mat-button class="addBtn" (click)="addIngredient()">+ Add Ingredient</button>
+  </div>
+
+  <div formArrayName="directionsList" class="directionGroup">
+    <div *ngFor="let d of directions.controls; let directionIndex = index" [formGroupName]="directionIndex">
+      <mat-form-field class="directionTxt">
+        <textarea matInput placeholder="Add a Direction" formControlName="direction"></textarea>
+      </mat-form-field>
+      <mat-icon class="deleteIcon" (click)="deleteDirection(directionIndex)">delete</mat-icon>
+    </div>
+    <button mat-button class="addBtn" (click)="addDirection()">+ Add Direction</button>
+  </div>
+
+  <div class="names">
+    <mat-form-field class="example-full-width firstName">
+      <input matInput placeholder="First Name" type="text" formControlName="firstName">
+    </mat-form-field>
+    <mat-form-field class="example-full-width lastName">
+      <input matInput placeholder="Last Name" type="text" formControlName="firstName">
+    </mat-form-field>
+  </div>
+
+  <button mat-button class="submitButton" type="submit" (click)="onSubmit(recipeForm.value)">Add Recipe</button>
+
+</form>
